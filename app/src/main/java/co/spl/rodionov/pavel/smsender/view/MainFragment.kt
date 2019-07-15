@@ -18,17 +18,4 @@ class MainFragment: Fragment() {
         return inflater.inflate(R.layout.fragment_main_layout, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        fillSmsList(view)
-    }
-
-    fun fillSmsList(view: View) {
-        view.smsList.updateSMSList(arrayListOf(
-            SMSModel(false, "SMS1"),
-            SMSModel(false, "SMS2"),
-            SMSModel(false, "SMS3"),
-            SMSModel(false, "SMS4")
-        ))
-    }
 }

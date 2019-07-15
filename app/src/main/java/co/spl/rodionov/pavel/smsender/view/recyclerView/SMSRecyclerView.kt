@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import co.spl.rodionov.pavel.smsender.model.SMSListModel
 import co.spl.rodionov.pavel.smsender.model.SMSModel
 
 /**
@@ -16,10 +17,10 @@ class SMSRecyclerView @JvmOverloads constructor(
 
     init {
         layoutManager = LinearLayoutManager(context, VERTICAL, false)
-        adapter = SMSRecyclerViewAdapter(emptyList())
+        adapter = SMSRecyclerViewAdapter(SMSListModel())
     }
 
-    fun updateSMSList(smsList: List<SMSModel>) {
-        (adapter as SMSRecyclerViewAdapter).updateSMSList(smsList)
+    fun update(smsListModel: SMSListModel) {
+        (adapter as SMSRecyclerViewAdapter).update(smsListModel)
     }
 }
